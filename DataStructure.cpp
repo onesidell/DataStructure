@@ -1,26 +1,26 @@
 #include <stdio.h>
 #include <string.h>
 #include <malloc.h>
-#include <stdlib.h> //strtoul »ç¿ë
+#include <stdlib.h> //strtoul ì‚¬ìš©
 
-#define TEXT 10000 // ÅØ½ºÆ®ÆÄÀÏ Å©±â
+#define TEXT 10000 // í…ìŠ¤íŠ¸íŒŒì¼ í¬ê¸°
 #define MAX 1000
 
-//user.txt ¹Ş±â
+//user.txt ë°›ê¸°
 typedef struct userlist {
 	unsigned long user_number;
 	char* user_id;
 	long friendnum;
 	long tweetnum;
-} user;
+} userlist;
 
-//friend.txt ¹Ş±â
+//friend.txt ë°›ê¸°
 typedef struct friendlist {
 	unsigned long my_number;
 	unsigned long friend_number;
 } friendlist;
 
-//word.txt ¹Ş±â
+//word.txt ë°›ê¸°
 typedef struct	wordtweetlist {
 	unsigned long user_id2;
 	char* tweetword;
@@ -53,8 +53,8 @@ int main() {
 	//user.txt
 	while ((!feof(User)) && (TotalUser < TEXT)) {
 		fgets(size1, MAX, User);					//user_id
-		fgets(date, MAX, User);						//³¯Â¥
-		fgets(name, MAX, User);						//ÀÌ¸§
+		fgets(date, MAX, User);						//ë‚ ì§œ
+		fgets(name, MAX, User);						//ì´ë¦„
 		fgets(empty, MAX, User);					//emptystring 
 	}
 	//friend.txt
@@ -66,7 +66,7 @@ int main() {
 	//word.txt
 	while ((!feof(Word)) && (TotalTweetword < TEXT)) {
 		fgets(size1, MAX, Word);				//user_id2
-		fgets(date, MAX, Word);					//³¯Â¥ 
+		fgets(date, MAX, Word);					//ë‚ ì§œ 
 		fgets(tweet, MAX, Word);				//tweetword
 		fgets(empty, MAX, Word);				//emptystring
 	}
