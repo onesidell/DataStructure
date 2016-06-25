@@ -6,7 +6,7 @@
 
 #define TEXT 30000 // 텍스트파일 크기
 #define MAX 1000
-char* ull;//strtoul을 위해 사용된 무의미한 변수
+char* ull;
 char string[100];
 
 //user.txt 받기
@@ -44,25 +44,6 @@ void wordtweetlist_init(wordtweetlist* self) {
 	self->tweetword = (char*)malloc(sizeof(char)*MAX);;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 void Interface()
 {
 	puts("0. Read data files");
@@ -90,7 +71,6 @@ int main() {
 	userlist users[TEXT];
 	friendlist friends[TEXT];
 	wordtweetlist words[TEXT];
-
 	FILE* User;
 	FILE* Friend;
 	FILE* Word;
@@ -100,8 +80,8 @@ int main() {
 	Word = fopen("word.txt", "r");
 
 	long TotalUser = 0;				//전체 유저 수
-	long TotalFriend = 0;			//전체 친구 수
-	long TotalTweetword = 0;		//전체 트윗 수
+	long TotalFriend = 0;				//전체 친구 수
+	long TotalTweetword = 0;			//전체 트윗 수
 	long AvgF = 0;					//평균 친구 수
 	long MinF = 0;					//최소 친구 수
 	long MaxF = 0;					//최대 친구 수
@@ -195,7 +175,6 @@ int main() {
 			printf("Minimum number of friends : %d\n", MinF);
 			printf("Maximum number of friends : %d\n\n", MaxF);
 
-
 			for (int i = 0; i < TotalUser; i++) {
 				if (MaxT < users[i].tweetnum) {
 					MaxT = users[i].tweetnum;
@@ -208,7 +187,6 @@ int main() {
 			printf("Average tweets per user : %d\n", AvgT);
 			printf("Minimum tweets per user : %d\n", MinT);
 			printf("Maximum tweets per user : %d\n\n", MaxT);
-
 		}
 		if (select == 2) {
 		}
